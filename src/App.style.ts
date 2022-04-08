@@ -7,6 +7,14 @@ export const StyledApp = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  //background-image: url("images/space-background.jpg");
+  background-size: cover;
+  background-image: repeating-radial-gradient(
+    farthest-side at 5px 5px,
+    #553c9a,
+    #ee4b2b,
+    #553c9a
+  );
 `;
 
 export const StyledWrapper = styled.div`
