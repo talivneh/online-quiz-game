@@ -59,12 +59,14 @@ const App = () => {
   }, [timer, gameOver, active]);
 
   useEffect(() => {
-    if (timeIsUp) checkAnswer("");
+    if (timeIsUp) {
+      checkAnswer("");
+    }
   }, [timeIsUp]);
 
   useEffect(() => {
     if (gameOver && active) setShowFinishModal(true);
-  }, [gameOver]);
+  }, [gameOver, active]);
 
   const calculateScore = () => {
     //calculate the score by question difficulty and percentage of time took to answer
