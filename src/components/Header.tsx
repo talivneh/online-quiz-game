@@ -8,6 +8,7 @@ import Timer from "./Timer";
 import {
   StyledHeaderWrapper,
   StyledHeaderInfoWrapper,
+  StyledHeadline,
 } from "./styles/Header.style";
 
 type Props = {
@@ -17,9 +18,11 @@ type Props = {
   loading: boolean;
   timer: number;
   timeIsUp: boolean;
+  userAnswered: boolean;
 };
 
 const Header = ({
+  userAnswered,
   gameOver,
   questions,
   score,
@@ -35,13 +38,18 @@ const Header = ({
 
   const renderClock = () => {
     if (!gameOver && !loading) {
-      return <Timer time={timer.toString()} timeIsUp={timeIsUp} />;
+      return (
+        <Timer userAnswered={userAnswered} time={timer} timeIsUp={timeIsUp} />
+      );
     }
   };
 
   return (
     <StyledHeaderWrapper>
-      <h1>Quiz</h1>
+      <StyledHeadline>
+        <h1>Quiz Game</h1>
+        <span>By Tal Livneh</span>
+      </StyledHeadline>
       <StyledHeaderInfoWrapper>
         {renderScore()}
         {renderClock()}

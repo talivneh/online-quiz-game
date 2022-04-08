@@ -193,8 +193,7 @@ const App = () => {
         !gameOver) ||
       timeIsUp
     ) {
-      const btnText =
-        questNum + 1 === questions.length ? "Finish" : "Next Question";
+      const btnText = questNum + 1 === questions.length ? "Finish" : "Next";
       return (
         <NextQuestBtn
           handleClick={handleNextQuestionBtnClick}
@@ -219,6 +218,7 @@ const App = () => {
     <StyledApp>
       <StyledWrapper>
         <Header
+          userAnswered={!!userAnswers[questNum]}
           gameOver={gameOver}
           questions={questions}
           score={score}

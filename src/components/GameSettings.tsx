@@ -1,9 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 //mui-components
 import {
   Autocomplete,
-  Card,
   FormControl,
   FormControlLabel,
   FormLabel,
@@ -14,15 +12,8 @@ import {
 //types
 import { GameSettingsObject } from "../App";
 import { Difficulty } from "../API";
-
-const StyledCard = styled(Card)`
-  width: 60%;
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 20px;
-`;
+//styles
+import { StyledCard } from "./styles/GameSettings.style";
 
 type Props = {
   changeGameSettings: (

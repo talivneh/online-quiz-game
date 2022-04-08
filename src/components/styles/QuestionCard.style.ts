@@ -48,7 +48,9 @@ export const StyledAnswerWrapper = styled.div<AnswerWrapperProps>`
   flex-grow: 1;
   flex-basis: 25%;
   button{
+    border: 1px solid lightgoldenrodyellow;
     width: 100%;
     background-color: ${({ correct, userClicked }) =>
-      correct ? "#5bfc8b" : userClicked ? "#fc665b" : "#96bdff"}};}
+      correct ? "#8bc34a" : userClicked ? "#e53935" : "#553c9a"}};
+}
 `;

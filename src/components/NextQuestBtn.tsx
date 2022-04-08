@@ -1,11 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-//mi-component
-import Button from "@mui/material/Button";
-
-const StyledButton = styled(Button)`
-  width: 80%;
-`;
+//styles
+import { StyledButton } from "./styles/NextQuestButton.style";
 
 type Props = {
   handleClick: () => void;
@@ -14,7 +9,7 @@ type Props = {
 
 const NextQuestBtn = ({ handleClick, btnText }: Props) => {
   return (
-    <StyledButton variant="outlined" onClick={handleClick}>
+    <StyledButton variant="contained" onClick={handleClick}>
       {btnText}
     </StyledButton>
   );

@@ -6,6 +6,11 @@ import { Button, Typography, useTheme, Zoom } from "@mui/material";
 const StyledButton = styled(Button)`
   flex-grow: 1;
   height: 100%;
+  color: white !important;
+  :hover {
+    background-color: orange !important;
+    color: black !important;
+  }
 `;
 
 type Props = {
@@ -33,7 +38,6 @@ const Answer = ({ answer, disabled, handleClick }: Props) => {
     >
       <StyledButton
         style={{ textTransform: "none" }}
-        variant="outlined"
         disabled={disabled}
         value={answer}
         onClick={handleClick}

@@ -33,7 +33,7 @@ const FinishModal = ({ showModal, handleClose, score, name }: Props) => {
   return (
     <StyledModal open={showModal} onClose={handleClose}>
       <StyledBox>
-        {score > 0 && <StyledLottie {...defaultLottieOptions} />}
+        <StyledLottie {...defaultLottieOptions} />
         <Fab onClick={handleClose} size={"small"} color={"warning"}>
           <CloseIcon />
         </Fab>

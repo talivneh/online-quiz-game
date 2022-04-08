@@ -1,14 +1,12 @@
 import styled from "styled-components";
-//mui-components
+//mi-component
 import Button from "@mui/material/Button";
 
-export const StyledBtn = styled(Button)`
+export const StyledButton = styled(Button)`
   width: 50vw !important;
   height: 70px !important;
   font-size: 25px !important;
-  :enabled {
-    background-color: #ee4b2b !important;
-  }
+  background-color: #ee4b2b !important;
   button {
     width: 50% !important;
   }
