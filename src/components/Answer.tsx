@@ -1,17 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 //mui-components
-import { Button, Typography, useTheme, Zoom } from "@mui/material";
-
-const StyledButton = styled(Button)`
-  flex-grow: 1;
-  height: 100%;
-  color: white !important;
-  :hover {
-    background-color: orange !important;
-    color: black !important;
-  }
-`;
+import { Typography, useTheme, Zoom } from "@mui/material";
+//style
+import { StyledButton } from "./styles/Answer.style";
 
 type Props = {
   answer: string;

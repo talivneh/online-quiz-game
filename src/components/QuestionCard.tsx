@@ -36,7 +36,9 @@ const QuestionCard: React.FC<Props> = ({
 }) => (
   <StyledCard>
     <StyledQuestInfo>
-      Question Number: {questionNumber} / {totalQuestions}
+      <p>
+        Question Number: {questionNumber} / {totalQuestions}
+      </p>
       <DifficultyLight difficulty={question.difficulty} />
     </StyledQuestInfo>
     <StyledWrapper>
@@ -49,6 +51,7 @@ const QuestionCard: React.FC<Props> = ({
             key={answer}
             correct={userAnswer?.correctAnswer === answer}
             userClicked={userAnswer?.answer === answer}
+            disabled={!!userAnswer}
           >
             <Answer
               answer={answer}

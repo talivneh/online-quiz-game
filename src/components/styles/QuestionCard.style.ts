@@ -5,6 +5,7 @@ import { Card } from "@mui/material";
 type AnswerWrapperProps = {
   correct: boolean;
   userClicked: boolean;
+  disabled: boolean;
 };
 
 export const StyledCard = styled(Card)`
@@ -16,11 +17,12 @@ export const StyledCard = styled(Card)`
   align-items: center;
 `;
 
-export const StyledQuestInfo = styled.p`
-  flex-basis: 5%;
+export const StyledQuestInfo = styled.div`
+  flex-basis: 10%;
   width: 95%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const StyledWrapper = styled.div`
@@ -54,7 +56,13 @@ export const StyledAnswerWrapper = styled.div<AnswerWrapperProps>`
   button{
     border: 1px solid lightgoldenrodyellow;
     width: 100%;
-    background-color: ${({ correct, userClicked }) =>
-      correct ? "#8bc34a" : userClicked ? "#e53935" : "#553c9a"}};
+    background-color: ${({ correct, userClicked, disabled }) =>
+      correct
+        ? "#8bc34a"
+        : userClicked
+        ? "#e53935"
+        : disabled
+        ? "gray"
+        : "#553c9a"}};
 }
 `;
