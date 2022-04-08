@@ -44,7 +44,7 @@ const App = () => {
   const [timer, setTimer] = useState(gameSettings.time);
   const [active, setActive] = useState(false);
   const [timeIsUp, setTimeIsUp] = useState(false);
-  const [showFinishModal, setShowFinishModal] = useState(true);
+  const [showFinishModal, setShowFinishModal] = useState(false);
 
   useEffect(() => {
     if (!gameOver && timer > 0 && active) {
