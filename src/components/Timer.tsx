@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+//mui-components
+import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 //styles
 import {
   StyledTimeIsUpMessage,
@@ -36,7 +38,12 @@ const Timer = ({ time, timeIsUp, userAnswered }: Props) => {
 
   const renderMessage = () => {
     if (timeIsUp)
-      return <StyledTimeIsUpMessage>TIME IS UP!</StyledTimeIsUpMessage>;
+      return (
+        <StyledTimeIsUpMessage>
+          TIME IS UP!
+          <SentimentVeryDissatisfiedIcon />
+        </StyledTimeIsUpMessage>
+      );
     return (
       <StyledTimerIsOn>
         {time.toString()}

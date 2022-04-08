@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Button from "@mui/material/Button";
 
 export const StyledBtn = styled(Button)`
-  width: 50vw !important;
   height: 70px !important;
   font-size: 25px !important;
   :enabled {

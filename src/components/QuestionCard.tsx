@@ -11,11 +11,14 @@ import {
   StyledAnswersWrapper,
   StyledQuestionWrapper,
   StyledWrapper,
-  StyledQuestNum,
+  StyledQuestInfo,
 } from "./styles/QuestionCard.style";
+import DifficultyLight from "./DifficultyLight";
+//types
+import { QuestionState } from "../API";
 
 type Props = {
-  question: string;
+  question: QuestionState;
   answers: string[];
   callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
   userAnswer: AnswerObject | undefined;
@@ -32,12 +35,13 @@ const QuestionCard: React.FC<Props> = ({
   totalQuestions,
 }) => (
   <StyledCard>
-    <StyledQuestNum>
+    <StyledQuestInfo>
       Question Number: {questionNumber} / {totalQuestions}
-    </StyledQuestNum>
+      <DifficultyLight difficulty={question.difficulty} />
+    </StyledQuestInfo>
     <StyledWrapper>
       <StyledQuestionWrapper>
-        <Question questionText={question} />
+        <Question questionText={question.question} />
       </StyledQuestionWrapper>
       <StyledAnswersWrapper>
         {answers.map((answer) => (

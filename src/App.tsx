@@ -143,7 +143,7 @@ const App = () => {
   };
 
   const renderGameSettings = () => {
-    if (gameOver) {
+    if (gameOver && !showFinishModal) {
       return (
         <GameSettings
           gameSettings={gameSettings}
@@ -176,7 +176,7 @@ const App = () => {
         <QuestionCard
           questionNumber={questNum + 1}
           totalQuestions={questions.length}
-          question={questions[questNum].question}
+          question={questions[questNum]}
           answers={questions[questNum].answers}
           userAnswer={userAnswers ? userAnswers[questNum] : undefined}
           callback={handleAnswerBtnClick}

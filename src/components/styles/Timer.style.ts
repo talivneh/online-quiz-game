@@ -15,6 +15,8 @@ export const StyledTimeIsUpMessage = styled.div`
   padding: 5px;
   font-size: 20px;
   border-color: #d32f2f;
+  display: flex;
+  align-items: center;
 `;
 
 export const StyledTimerIsOn = styled.div`

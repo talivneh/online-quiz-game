@@ -7,6 +7,7 @@ export const StyledLoaderWrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: white;
 `;
 
 export const StyledLottie = styled(Lottie)`

@@ -3,7 +3,7 @@ import { shuffleAnswers } from "./utils";
 export type Question = {
   category: string;
   correct_answer: string;
-  difficulty: string;
+  difficulty: Difficulty;
   incorrect_answers: string[];
   question: string;
   type: string;

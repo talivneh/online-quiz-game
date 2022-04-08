@@ -16,28 +16,32 @@ export const StyledCard = styled(Card)`
   align-items: center;
 `;
 
-export const StyledQuestNum = styled.p`
-  flex-basis: 10%;
+export const StyledQuestInfo = styled.p`
+  flex-basis: 5%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const StyledWrapper = styled.div`
-  flex-basis: 90%;
+  flex-basis: 95%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
 `;
 
 export const StyledQuestionWrapper = styled.div`
-  flex-basis: 65%;
+  flex-basis: 75%;
   display: flex;
+  max-height: 50%;
   justify-content: center;
   align-items: center;
 `;
 
 export const StyledAnswersWrapper = styled.div`
-  flex-basis: 30%;
+  flex-basis: 27%;
   width: 95%;
   display: flex;
   flex-direction: row;
