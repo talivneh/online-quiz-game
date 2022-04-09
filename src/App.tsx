@@ -120,7 +120,6 @@ const App = () => {
     setGameOver(false);
     setTimeIsUp(false);
     setQuestions([]);
-    //todo: consider try-catch
     const newQuestions = await fetchQuizQuestions(gameSettings.difficulty);
     setQuestions(newQuestions);
     setScore(0);
@@ -258,7 +257,12 @@ const App = () => {
   };
 
   return (
-    <StyledApp>
+    <StyledApp
+      style={{
+        backgroundImage:
+          "url(" + require("./images/space-background.jpg") + ")",
+      }}
+    >
       <StyledWrapper>
         <Header
           userAnswered={!!userAnswers[questNum]}

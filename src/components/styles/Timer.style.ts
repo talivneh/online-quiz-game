@@ -9,12 +9,11 @@ export const StyledTimerWrapper = styled.div`
 `;
 
 export const StyledTimeIsUpMessage = styled.div`
-  background-color: #e53935;
+  background-color: lightgray;
   font-weight: 600;
   border-radius: 8px;
-  padding: 5px;
+  padding: 5px 10px;
   font-size: 20px;
-  border-color: #d32f2f;
   display: flex;
   align-items: center;
 `;

@@ -57,9 +57,9 @@ export const StyledPlayerName = styled.p`
 `;
 
 export const StyledScoreInfo = styled.p`
-  font-size: 2rem;
+  font-size: 2.5rem;
 `;
 
 export const StyledFinalWord = styled.p`
-  font-size: 1.5rem;
+  font-size: 2rem;
 `;

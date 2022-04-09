@@ -46,7 +46,7 @@ const QuestionCard: React.FC<Props> = ({
     <StyledQuestInfo>
       <DifficultyLight difficulty={question.difficulty} />
       <p>
-        Question Number: {questionNumber} / {totalQuestions}
+        Question: {questionNumber} / {totalQuestions}
       </p>
       <Help
         help={help}

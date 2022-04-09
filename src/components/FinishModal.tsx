@@ -39,7 +39,7 @@ const FinishModal = ({ showModal, handleClose, score, name }: Props) => {
         </Fab>
         <StyledModalMessage>
           <h2>Game Over</h2>
-          <StyledPlayerName>{name},</StyledPlayerName>
+          <StyledPlayerName>{name.toUpperCase()},</StyledPlayerName>
           <StyledScoreInfo>you scored {score.toFixed()} points</StyledScoreInfo>
           <StyledFinalWord>
             {score > 20

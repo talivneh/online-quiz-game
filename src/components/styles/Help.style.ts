@@ -13,8 +13,12 @@ export const StyleSpeedDial = styled(SpeedDial)<StyleProps>`
     background-color: ${({ disabled }) => (disabled ? "gray" : "#ff7f50")};
     opacity: ${({ disabled }) => (disabled ? "0.5" : "1")};
     cursor: ${({ disabled }) => (disabled ? "default" : "")};
+    box-shadow: ${({ disabled }) => (disabled ? "none" : "")};
     :hover {
       background-color: ${({ disabled }) => (disabled ? "gray" : "#ff7f50")};
+    }
+    :active {
+      box-shadow: ${({ disabled }) => (disabled ? "none" : "")};
     }
   }
   svg {

@@ -6,6 +6,7 @@ export const StyledHeaderWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
+  color: white;
 `;
 
 export const StyledHeadline = styled.div`
@@ -17,6 +18,7 @@ export const StyledHeadline = styled.div`
   h1 {
     font-size: 3rem;
     text-shadow: 2px 2px 0 #ff7f50, 4px 4px 0 #553c9a;
+    margin-bottom: -10px;
   }
 `;
 
