@@ -5,10 +5,14 @@ import Button from "@mui/material/Button";
 export const StyledBtn = styled(Button)`
   height: 70px !important;
   font-size: 25px !important;
-  background-color: #ee4b2b !important;
-  :disabled {
-    opacity: 0.5;
+  :enabled {
+    background-color: #ee4b2b !important;
   }
+  :disabled {
+    background-color: white !important;
+    opacity: 0.3 !important;
+  }
+
   button {
     width: 50% !important;
   }
