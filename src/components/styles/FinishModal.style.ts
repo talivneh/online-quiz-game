@@ -47,6 +47,7 @@ export const StyledModalMessage = styled.div`
     font-size: 3rem;
     color: #ee4b2b;
     margin: 0;
+    text-shadow: 2px 2px 0 #ff7f50, 4px 4px 0 #553c9a;
   }
 `;
 

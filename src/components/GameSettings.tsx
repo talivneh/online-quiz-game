@@ -13,7 +13,7 @@ import {
 import { GameSettingsObject } from "../App";
 import { Difficulty } from "../API";
 //styles
-import { StyledCard } from "./styles/GameSettings.style";
+import { StyledPaper } from "./styles/GameSettings.style";
 
 type Props = {
   changeGameSettings: (
@@ -43,7 +43,7 @@ const GameSettings = ({ changeGameSettings, gameSettings }: Props) => {
   ];
 
   return (
-    <StyledCard>
+    <StyledPaper elevation={24}>
       <TextField
         required
         id="outlined-basic"
@@ -79,7 +79,7 @@ const GameSettings = ({ changeGameSettings, gameSettings }: Props) => {
           <FormControlLabel value={10} control={<Radio />} label={10} />
         </RadioGroup>
       </FormControl>
-    </StyledCard>
+    </StyledPaper>
   );
 };
 

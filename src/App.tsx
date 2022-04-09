@@ -26,6 +26,13 @@ export type GameSettingsObject = {
   difficulty: Difficulty[];
 };
 
+export type HelpType = { time: boolean; hint: boolean };
+
+export type Hint = {
+  hide: boolean;
+  answers: String[];
+};
+
 const initialGameSettings = {
   name: "",
   difficulty: [Difficulty.EASY],
@@ -45,6 +52,11 @@ const App = () => {
   const [active, setActive] = useState(false);
   const [timeIsUp, setTimeIsUp] = useState(false);
   const [showFinishModal, setShowFinishModal] = useState(false);
+  const [help, setHelp] = useState<HelpType>({ time: false, hint: false });
+  const [hideAnswers, setHideAnswers] = useState<Hint>({
+    hide: false,
+    answers: [],
+  });
 
   useEffect(() => {
     if (!gameOver && timer > 0 && active) {
@@ -59,6 +71,22 @@ const App = () => {
   }, [timer, gameOver, active]);
 
   useEffect(() => {
+    if (help.time) setTimer(timer + 10);
+  }, [help.time]);
+
+  useEffect(() => {
+    if (help.hint) {
+      const random = Math.floor(
+        Math.random() * questions[questNum].incorrect_answers.length
+      );
+      const randomAnswers = questions[questNum].incorrect_answers.filter(
+        (answer, index) => index !== random
+      );
+      setHideAnswers({ hide: true, answers: randomAnswers });
+    }
+  }, [help.hint]);
+
+  useEffect(() => {
     if (timeIsUp) {
       checkAnswer("");
     }
@@ -69,7 +97,12 @@ const App = () => {
   }, [gameOver, active]);
 
   const calculateScore = () => {
-    //calculate the score by question difficulty and percentage of time took to answer
+    //calculate the score by question difficulty, percentage of time took to answer
+    //and weather the player used help od not
+    let helpFee = 1;
+    if (help.time) helpFee++;
+    if (help.hint) helpFee++;
+
     let numByDiff = 1;
     if (questions[questNum].difficulty === Difficulty.MEDIUM) {
       numByDiff = 2;
@@ -77,7 +110,9 @@ const App = () => {
     if (questions[questNum].difficulty === Difficulty.HARD) {
       numByDiff = 3;
     }
-    return (gameSettings.time - timer / gameSettings.time) * numByDiff;
+    return (
+      ((gameSettings.time - timer / gameSettings.time) * numByDiff) / helpFee
+    );
   };
 
   const startQuiz = async () => {
@@ -126,6 +161,11 @@ const App = () => {
     setActive(true);
     setTimer(gameSettings.time);
     setTimeIsUp(false);
+    setHideAnswers({
+      hide: false,
+      answers: [],
+    });
+    setHelp({ time: false, hint: false });
     const nextQuestion = questNum + 1;
     if (nextQuestion === questions.length) {
       setGameOver(true);
@@ -180,6 +220,9 @@ const App = () => {
           answers={questions[questNum].answers}
           userAnswer={userAnswers ? userAnswers[questNum] : undefined}
           callback={handleAnswerBtnClick}
+          help={help}
+          setHelp={setHelp}
+          hideAnswers={hideAnswers}
         />
       );
     }

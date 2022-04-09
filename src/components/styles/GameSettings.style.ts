@@ -1,8 +1,8 @@
 import styled from "styled-components";
 //mui-components
-import { Card } from "@mui/material";
+import { Paper } from "@mui/material";
 
-export const StyledCard = styled(Card)`
+export const StyledPaper = styled(Paper)`
   width: 60%;
   height: 40%;
   display: flex;

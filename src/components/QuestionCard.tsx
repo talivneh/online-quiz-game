@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 //types
-import { AnswerObject } from "../App";
+import { AnswerObject, Hint } from "../App";
 //components
 import Answer from "./Answer";
 import Question from "./Question";
+import Help from "./Help";
 //styles
 import {
   StyledAnswerWrapper,
@@ -16,6 +17,7 @@ import {
 import DifficultyLight from "./DifficultyLight";
 //types
 import { QuestionState } from "../API";
+import { HelpType } from "../App";
 
 type Props = {
   question: QuestionState;
@@ -24,6 +26,9 @@ type Props = {
   userAnswer: AnswerObject | undefined;
   questionNumber: number;
   totalQuestions: number;
+  help: HelpType;
+  setHelp: Dispatch<SetStateAction<HelpType>>;
+  hideAnswers: Hint;
 };
 
 const QuestionCard: React.FC<Props> = ({
@@ -33,13 +38,22 @@ const QuestionCard: React.FC<Props> = ({
   userAnswer,
   questionNumber,
   totalQuestions,
+  help,
+  setHelp,
+  hideAnswers,
 }) => (
   <StyledCard>
     <StyledQuestInfo>
+      <DifficultyLight difficulty={question.difficulty} />
       <p>
         Question Number: {questionNumber} / {totalQuestions}
       </p>
-      <DifficultyLight difficulty={question.difficulty} />
+      <Help
+        help={help}
+        setHelp={setHelp}
+        disabled={!!userAnswer}
+        hasHint={answers.length >= 4}
+      />
     </StyledQuestInfo>
     <StyledWrapper>
       <StyledQuestionWrapper>
@@ -51,11 +65,11 @@ const QuestionCard: React.FC<Props> = ({
             key={answer}
             correct={userAnswer?.correctAnswer === answer}
             userClicked={userAnswer?.answer === answer}
-            disabled={!!userAnswer}
+            disabled={!!userAnswer || hideAnswers.answers.includes(answer)}
           >
             <Answer
               answer={answer}
-              disabled={!!userAnswer}
+              disabled={!!userAnswer || hideAnswers.answers.includes(answer)}
               handleClick={callback}
             />
           </StyledAnswerWrapper>

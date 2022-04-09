@@ -14,6 +14,10 @@ export const StyledHeadline = styled.div`
   justify-content: center;
   text-align: center;
   height: 50%;
+  h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 0 #ff7f50, 4px 4px 0 #553c9a;
+  }
 `;
 
 export const StyledHeaderInfoWrapper = styled.div`
