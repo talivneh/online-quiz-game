@@ -18,3 +18,7 @@
 ![game over](src/readme-images/game-over.png)
 
 <h1 align="center">ENJOY :)</h1>
+
+###
+attributes:
+<a href="https://www.vecteezy.com/free-vector/space-background">Space Background Vectors by Vecteezy</a>
