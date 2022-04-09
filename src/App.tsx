@@ -260,7 +260,7 @@ const App = () => {
     <StyledApp
       style={{
         backgroundImage:
-          "url(" + require("./images/space-background.jpg") + ")",
+          "url(" + require("./images/space-background.jpeg") + ")",
       }}
     >
       <StyledWrapper>
