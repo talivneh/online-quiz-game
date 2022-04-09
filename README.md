@@ -2,7 +2,7 @@
 
 **Link to live [Online Quiz](https://online-quiz-game-by-tal-livneh.netlify.app/)**
 
-![first step](src/readme-images/game-img.png)
+![first step](src/readme-images/game-img.jpg)
 ## Instructions
 
 **First step:** Enter your name and game preferences
