@@ -20,13 +20,14 @@ type Props = {
 
 const Help = ({ help, setHelp, disabled, hasHint }: Props) => {
   const renderSpeedDial = () => {
-    if (!disabled) {
+    const noHelpLeft = help.time && help.hint;
+    if (!disabled && !noHelpLeft) {
       return (
         <StyleSpeedDial
-          disabled={disabled}
           ariaLabel="SpeedDial"
           icon={<QuestionMarkIcon />}
           direction={"down"}
+          disabled={disabled || noHelpLeft}
         >
           <StyledSpeedDialAction
             onClick={() => {
@@ -36,6 +37,7 @@ const Help = ({ help, setHelp, disabled, hasHint }: Props) => {
             icon={<Timer10SelectIcon />}
             tooltipTitle={"get 10 more seconds"}
             tooltipPlacement={"right"}
+            disabled={help.time}
           />
           {hasHint && (
             <StyledSpeedDialAction
@@ -46,6 +48,7 @@ const Help = ({ help, setHelp, disabled, hasHint }: Props) => {
               icon={<Filter2Icon />}
               tooltipTitle={"remove 2 answers"}
               tooltipPlacement={"right"}
+              disabled={help.hint}
             />
           )}
         </StyleSpeedDial>
@@ -53,7 +56,7 @@ const Help = ({ help, setHelp, disabled, hasHint }: Props) => {
     }
     return (
       <StyleSpeedDial
-        disabled={disabled}
+        disabled={disabled || noHelpLeft}
         ariaLabel="SpeedDial"
         icon={<QuestionMarkIcon />}
         direction={"down"}
@@ -62,7 +65,17 @@ const Help = ({ help, setHelp, disabled, hasHint }: Props) => {
   };
 
   return (
-    <Box sx={{ position: "relative", height: 50 }}>{renderSpeedDial()}</Box>
+    <Box
+      sx={{
+        position: "relative",
+        height: 50,
+        width: 50,
+        marginTop: 1,
+        marginRight: -1,
+      }}
+    >
+      {renderSpeedDial()}
+    </Box>
   );
 };
 
