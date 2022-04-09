@@ -10,6 +10,7 @@ export const StyledTimerWrapper = styled.div`
 
 export const StyledTimeIsUpMessage = styled.div`
   background-color: lightgray;
+  color: black;
   font-weight: 600;
   border-radius: 8px;
   padding: 5px 10px;
